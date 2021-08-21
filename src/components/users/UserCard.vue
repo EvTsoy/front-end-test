@@ -20,6 +20,7 @@
 
 <script>
 export default {
+  name: 'UserCard',
   props: {
     user: {
       type: Object,
@@ -29,7 +30,7 @@ export default {
 
   methods: {
     login () {
-      console.log('user login')
+      this.$store.dispatch('auth/login', this.user)
     }
   }
 }

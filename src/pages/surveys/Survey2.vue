@@ -38,7 +38,7 @@
         </label>
       </div>
 
-      <div class="form-group">
+      <div class="form-group agency-group">
         <p class="radio-title">
           Are you part of an agency or a consulting firm?
         </p>
@@ -55,8 +55,18 @@
       </div>
 
       <div class="buttons-bar">
-        <button @click="nextSurvey" class="button button-survey">NEXT</button>
-        <button @click="nextSurvey" class="button button-survey">NEXT</button>
+        <button
+          @click.prevent="nextSurvey(0)"
+          class="button button-survey button-previous"
+        >
+          Previous
+        </button>
+        <button
+          @click.prevent="nextSurvey(2)"
+          class="button button-survey button-next"
+        >
+          Next
+        </button>
       </div>
     </form>
   </div>
@@ -69,9 +79,8 @@ export default {
   emits: ['nextSurvey'],
 
   methods: {
-    nextSurvey () {
-      console.log('next')
-      this.$emit('nextSurvey', 2)
+    nextSurvey (next) {
+      this.$emit('nextSurvey', next)
     }
   }
 }

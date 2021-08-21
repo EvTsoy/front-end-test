@@ -1,0 +1,20 @@
+.destination {
+  @include flexCenter;
+  margin-top: 8rem;
+  &-item {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 19.2rem;
+    height: 19.7rem;
+    text-align: center;
+    padding: 3.3rem 2.4rem;
+    cursor: pointer;
+    &:first-child {
+      margin-right: 4.4rem;
+    }
+    h4 {
+      @include p2($darkBlue);
+      margin-top: 2.6rem;
+    }
+  }
+}

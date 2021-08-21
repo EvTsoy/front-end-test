@@ -11,9 +11,9 @@
 
 <script>
 import WelcomeWrapper from '@/components/UI/WelcomeWrapper.vue'
-import Survey1 from '@/components/surveys/Survey1'
-import Survey2 from '@/components/surveys/Survey2'
-import Survey3 from '@/components/surveys/Survey3'
+import Survey1 from '@/pages/surveys/Survey1'
+import Survey2 from '@/pages/surveys/Survey2'
+import Survey3 from '@/pages/surveys/Survey3'
 
 export default {
   components: {
@@ -21,6 +21,14 @@ export default {
     Survey1,
     Survey2,
     Survey3
+  },
+
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      const user = vm.$store.getters['auth/user']
+      if (!user) return vm.$router.push({ name: 'StartPage' })
+      vm.nextPage(user)
+    })
   },
 
   data () {
@@ -39,6 +47,19 @@ export default {
   methods: {
     nextSurvey (next) {
       this.currentSurvey = this.surveys[next]
+    },
+
+    nextPage (user) {
+      switch (user.status) {
+        case 'invited':
+          this.currentSurvey = 'Survey3'
+          break
+        case 'registered':
+          this.$router.push({ name: 'EndPage' })
+          break
+        default:
+          this.$router.push({ name: 'WelcomeSurvey' })
+      }
     }
   }
 }

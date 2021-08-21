@@ -18,8 +18,16 @@
 
 @mixin h3($color: $black) {
   font-family: $europaBold;
+  color: $color;
   font-size: 4.2rem;
   line-height: 2.8rem;
+}
+
+@mixin h4($color: $black) {
+  color: $color;
+  font-family: $europaBold;
+  font-size: 7.2rem;
+  line-height: 7.2rem;
 }
 
 @mixin p1($color: $black) {
@@ -51,9 +59,16 @@
   line-height: 1.4rem;
 }
 
+@mixin p5($color: $black) {
+  font-family: $europa;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+}
+
 @mixin btn {
   text-decoration: none;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 @mixin btnLogin($color: $white, $bgColor: $black) {
@@ -61,6 +76,14 @@
   background-color: $bgColor;
   font-family: $europaBold;
   font-size: 2.2rem;
+}
+
+@mixin btnEnd($color: $white, $bgColor: $black) {
+  color: $color;
+  background-color: $bgColor;
+  font-family: $europa;
+  font-size: 3.2rem;
+  text-transform: uppercase;
 }
 
 @mixin btnSurvey($color: $darkGray, $bgColor: $gray-6) {

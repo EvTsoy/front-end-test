@@ -11,16 +11,29 @@
   line-height: 3.9rem;
 }
 
+.button-end {
+  @include btnEnd;
+  width: 45.9rem;
+  height: 8rem;
+  line-height: 8rem;
+  margin: 4.9rem 0 11.3rem;
+  display: inline-block;
+}
+
 .button-survey {
   @include btnSurvey;
   display: block;
-  // margin-left: auto;
+  margin-left: auto;
   width: 12rem;
   height: 3.8rem;
-}
-
-.button-previous {
-  margin-left: 0;
+  text-transform: uppercase;
+  &.button-previous {
+    margin-left: 0;
+  }
+  &.button-next {
+    background-color: $brand-3;
+    color: $white;
+  }
 }
 
 .buttons-bar {
