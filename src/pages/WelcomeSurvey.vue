@@ -4,6 +4,7 @@
       <component
         :is="currentSurveyComponent"
         @nextSurvey="nextSurvey"
+        :user="getCurrentUser"
       ></component>
     </keep-alive>
   </welcome-wrapper>
@@ -41,6 +42,10 @@ export default {
   computed: {
     currentSurveyComponent () {
       return this.currentSurvey.toLowerCase()
+    },
+
+    getCurrentUser () {
+      return this.$store.getters['auth/user']
     }
   },
 
@@ -52,7 +57,7 @@ export default {
     nextPage (user) {
       switch (user.status) {
         case 'invited':
-          this.currentSurvey = 'Survey3'
+          this.currentSurvey = 'Survey2'
           break
         case 'registered':
           this.$router.push({ name: 'EndPage' })

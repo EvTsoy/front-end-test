@@ -3,5 +3,11 @@ export default {
     state.user = {
       ...user
     }
+  },
+
+  updateData (state, data) {
+    state.user = {
+      ...data
+    }
   }
 }

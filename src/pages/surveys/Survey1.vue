@@ -3,14 +3,15 @@
     <h2 class="wp__title">Welcome to Littledata</h2>
     <div class="wp__progress-bar"></div>
 
-    <form action="" class="form">
+    <form action="" class="form" @submit.prevent="submitForm">
       <div class="form-group">
-        <label for="name" class="form-label">Store name</label>
+        <label for="store" class="form-label">Store name</label>
         <input
           type="text"
-          id="name"
+          id="store"
           class="form-input"
           placeholder="Your Store Name"
+          v-model="storeName"
         />
       </div>
       <div class="form-group">
@@ -20,6 +21,7 @@
           placeholder="yourstore.myshopify.com"
           id="url"
           class="form-input"
+          v-model="storeUrl"
         />
       </div>
 
@@ -30,14 +32,15 @@
           id="email"
           class="form-input"
           placeholder="jane@yourstore.com"
+          v-model="email"
         />
         <label class="checkboxes">
-          <input type="checkbox" checked="checked" />
+          <input type="checkbox" v-model="subscription" />
           Send me all the important app notifications on this email
           <span class="checkmark"></span>
         </label>
       </div>
-      <button @click="nextSurvey" class="button button-survey">NEXT</button>
+      <button class="button button-survey">Next</button>
     </form>
   </div>
 </template>
@@ -48,10 +51,52 @@ export default {
 
   emits: ['nextSurvey'],
 
+  props: {
+    user: {
+      required: true
+    }
+  },
+
+  data () {
+    return {
+      storeName: null,
+      storeUrl: null,
+      email: null,
+      subscription: true,
+      formIsValid: true
+    }
+  },
+
   methods: {
-    nextSurvey () {
-      console.log('next')
-      this.$emit('nextSurvey', 1)
+    nextSurvey (next) {
+      this.$emit('nextSurvey', next)
+    },
+
+    validateForm () {
+      this.formIsValid = true
+      if (!this.storeName || !this.storeUrl || !this.email) {
+        this.formIsValid = false
+        alert('Please fill all fields')
+      }
+    },
+
+    submitForm () {
+      this.validateForm()
+      if (!this.formIsValid) return
+
+      const formData = {
+        storeName: this.storeName,
+        storeUrl: this.storeUrl,
+        email: this.email,
+        subscription: this.subscription
+      }
+
+      this.$store.dispatch('auth/updateData', {
+        ...this.user,
+        ...formData
+      })
+
+      this.nextSurvey(1)
     }
   }
 }

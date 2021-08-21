@@ -20,6 +20,10 @@ export default {
       const user = vm.$store.getters['auth/user']
       if (!user) return vm.$router.push({ name: 'StartPage' })
     })
+  },
+
+  created () {
+    console.log(this.$store.getters['auth/user'])
   }
 }
 </script>

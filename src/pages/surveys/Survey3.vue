@@ -6,11 +6,11 @@
     </p>
 
     <div class="destination">
-      <div class="destination-item" @click="finishSurvey">
+      <div class="destination-item" @click="finishSurvey('Google Analytics')">
         <img :src="require(`@/assets/images/Assets/GA_logo.svg`)" alt="" />
         <h4>Google Analytics</h4>
       </div>
-      <div class="destination-item" @click="finishSurvey">
+      <div class="destination-item" @click="finishSurvey('Segment')">
         <img :src="require(`@/assets/images/Assets/Segment_logo.svg`)" alt="" />
         <h4>Segment</h4>
       </div>
@@ -24,8 +24,19 @@ export default {
 
   emits: ['nextSurvey'],
 
+  props: {
+    user: {
+      required: true
+    }
+  },
+
   methods: {
-    finishSurvey () {
+    finishSurvey (destination) {
+      this.$store.dispatch('auth/updateData', {
+        ...this.user,
+        destination
+      })
+
       this.$router.push({ name: 'EndPage' })
     }
   }
