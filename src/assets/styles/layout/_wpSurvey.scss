@@ -1,0 +1,21 @@
+.wp {
+  display: flex;
+  &-split {
+    width: 50%;
+    min-height: 1080px;
+    &.left {
+      background-color: $brand;
+      background-image: url('~@/assets/images/Assets/Pattern_Boxes@2x.png');
+      background-size: cover;
+    }
+
+    &.right {
+      right: 0;
+      padding: 11rem 0;
+      .wp-container {
+        width: 43.2rem;
+        margin: auto;
+      }
+    }
+  }
+}

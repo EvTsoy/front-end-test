@@ -1,0 +1,30 @@
+.button {
+  @include btn;
+}
+
+.button-login {
+  @include btnLogin;
+  display: inline-block;
+  margin-top: 0.9rem;
+  width: 17.7rem;
+  height: 3.9rem;
+  line-height: 3.9rem;
+}
+
+.button-survey {
+  @include btnSurvey;
+  display: block;
+  // margin-left: auto;
+  width: 12rem;
+  height: 3.8rem;
+}
+
+.button-previous {
+  margin-left: 0;
+}
+
+.buttons-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7rem;
+}

@@ -1,0 +1,33 @@
+.sp__title {
+  height: 8.9rem;
+}
+
+.sp__users {
+  @include flexCenter;
+  margin-top: 6.1rem;
+
+  &-card {
+    width: 33.7rem;
+    text-align: center;
+    margin: 0 8.05rem;
+    img {
+      width: 25.9rem;
+      height: 25.9rem;
+    }
+    .name {
+      @include lato(700);
+      font-size: 3.2rem;
+      line-height: 3.8rem;
+      letter-spacing: 0;
+    }
+
+    .desc {
+      @include p1;
+      margin-top: 1.9rem;
+      width: 100%;
+      height: 19.6rem;
+      background-color: $gray-1;
+      padding: 2.5rem 1.3rem 1.5rem 2.5rem;
+    }
+  }
+}
