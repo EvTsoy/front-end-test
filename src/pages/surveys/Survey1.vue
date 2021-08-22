@@ -40,7 +40,9 @@
           <span class="checkmark"></span>
         </label>
       </div>
-      <button class="button button-survey">Next</button>
+      <button @click="scrollToTop" class="button button-survey">
+        Next
+      </button>
     </form>
   </div>
 </template>
@@ -70,6 +72,13 @@ export default {
   methods: {
     nextSurvey (next) {
       this.$emit('nextSurvey', next)
+    },
+
+    scrollToTop () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
     },
 
     validateForm () {

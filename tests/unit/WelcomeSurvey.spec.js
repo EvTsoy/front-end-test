@@ -7,6 +7,8 @@ import authModule from '@/store/modules/auth'
 
 describe('WelcomeSurvey.vue', () => {
   test('user can pass first survey', async () => {
+    window.scrollTo = () => false
+
     router.push('/welcome')
     await router.isReady()
 

@@ -23,8 +23,17 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  history: createWebHistory(process.env.BASE_URL)
+})
+
+router.beforeEach((to, from, next) => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+
+  next()
 })
 
 export default router

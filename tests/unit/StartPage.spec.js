@@ -51,6 +51,8 @@ describe('StartPage.vue', () => {
   })
 
   test('users can login with buttons and route to welcome', async () => {
+    window.scrollTo = () => false
+
     const store = createStore({
       modules: {
         users: usersModule,

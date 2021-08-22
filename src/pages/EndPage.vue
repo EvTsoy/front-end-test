@@ -23,7 +23,9 @@ export default {
   },
 
   created () {
-    console.log(this.$store.getters['auth/user'])
+    const user = this.$store.getters['auth/user']
+    if (!user) return
+    console.log({ ...user })
   }
 }
 </script>

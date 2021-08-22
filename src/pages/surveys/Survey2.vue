@@ -39,7 +39,7 @@
         >
           Previous
         </button>
-        <button class="button button-survey button-next">
+        <button @click="scrollToTop" class="button button-survey button-next">
           Next
         </button>
       </div>
@@ -82,6 +82,13 @@ export default {
   methods: {
     nextSurvey (next) {
       this.$emit('nextSurvey', next)
+    },
+
+    scrollToTop () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
     },
 
     chooseOption (option) {
