@@ -37,10 +37,20 @@
           class="button button-survey button-previous"
           v-if="user.status === 'new'"
         >
-          Previous
+          <img
+            :src="require('@/assets/images/custom/left-arrow.svg')"
+            alt=""
+            class="arrow left"
+          />
+          Back
         </button>
         <button @click="scrollToTop" class="button button-survey button-next">
           Next
+          <img
+            :src="require('@/assets/images/custom/right-arrow.svg')"
+            alt=""
+            class="arrow right white-arrow"
+          />
         </button>
       </div>
     </form>

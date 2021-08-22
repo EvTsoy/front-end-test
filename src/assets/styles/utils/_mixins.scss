@@ -33,7 +33,7 @@
   color: $color;
   font-family: $europa;
   font-size: 2.2rem;
-  line-height: 2.7rem;
+  line-height: 2.6rem;
   text-align: left;
 }
 
@@ -59,6 +59,7 @@
 }
 
 @mixin p5($color: $black) {
+  color: $color;
   font-family: $europa;
   font-size: 2.4rem;
   line-height: 2.8rem;

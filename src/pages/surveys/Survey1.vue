@@ -42,6 +42,11 @@
       </div>
       <button @click="scrollToTop" class="button button-survey">
         Next
+        <img
+          :src="require('@/assets/images/custom/right-arrow.svg')"
+          alt=""
+          class="arrow right"
+        />
       </button>
     </form>
   </div>

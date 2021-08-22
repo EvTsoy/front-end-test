@@ -1,4 +1,15 @@
 .sp {
+  @media screen and (max-width: $breakpoint-1) {
+    width: 54%;
+    margin: auto;
+  }
+
+  @media screen and (max-width: $breakpoint-2) {
+    width: 72%;
+    min-width: 29rem;
+    margin: auto;
+  }
+
   &__title {
     text-align: center;
     height: 8.9rem;
@@ -13,12 +24,12 @@
     }
 
     &-card {
-      width: 33.7rem;
       text-align: center;
       margin: 0 8.05rem;
       @media screen and (max-width: $breakpoint-1) {
         margin-top: 4rem;
       }
+
       img {
         width: 25.9rem;
         height: 25.9rem;
@@ -33,10 +44,16 @@
       .desc {
         @include p1;
         margin-top: 1.9rem;
-        width: 100%;
-        min-height: 19.6rem;
+        width: 33.7rem;
+        height: 19.6rem;
         background-color: $gray-1;
         padding: 2.5rem 1.3rem 1.5rem 2.5rem;
+        @media screen and (max-width: $breakpoint-2) {
+          width: 100%;
+          max-width: 33.7rem;
+          height: 100%;
+          min-height: 19.6rem;
+        }
       }
     }
   }

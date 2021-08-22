@@ -7,8 +7,8 @@
   line-height: 2rem;
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 2.6rem;
+  padding-left: 3.6rem;
+  margin-bottom: 2.4rem;
   margin-left: 1.4rem;
   cursor: pointer;
   -webkit-user-select: none;
@@ -17,7 +17,10 @@
   user-select: none;
   &.radio-inline {
     display: inline-block;
-    margin-right: 5rem;
+    &:last-child {
+      margin-left: 5.6rem;
+    }
+    margin-bottom: 0;
   }
 }
 

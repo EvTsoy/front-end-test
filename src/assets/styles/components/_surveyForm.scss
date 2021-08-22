@@ -1,5 +1,5 @@
 .form {
-  margin-top: 5.6rem;
+  margin-top: 4.8rem;
   .form-group {
     .radio-title {
       @include p2($darkGray);
@@ -7,17 +7,18 @@
     }
 
     &.agency-group {
-      margin-top: 7.2rem;
+      margin-top: 4.8rem;
     }
 
     &.email-group {
       background-color: $brand-2;
-      padding: 2.2rem 2.4rem;
-      margin: 5.6rem 0;
+      padding: 1.6rem;
+      margin: 4.8rem 0;
       border-radius: 4px;
 
       .form-input {
         border: none;
+        margin-bottom: 1.6rem;
       }
     }
     &:nth-child(2) {
@@ -33,8 +34,8 @@
     .form-input {
       @include inputField;
       border: 1px solid $gray-3;
-      margin: 1.8rem 0;
-      padding: 1.4rem 1.8rem;
+      margin: 1.6rem 0 2.4rem;
+      padding: 1.6rem;
       font-family: $europa;
       font-size: 1.8rem;
       &::placeholder {

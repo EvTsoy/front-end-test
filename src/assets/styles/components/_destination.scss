@@ -7,14 +7,14 @@
     width: 19.2rem;
     height: 19.7rem;
     text-align: center;
-    padding: 3.3rem 2.4rem;
+    padding: 3.2rem 2.4rem;
     cursor: pointer;
     &:first-child {
       margin-right: 4.4rem;
     }
     h4 {
       @include p2($darkBlue);
-      margin-top: 2.6rem;
+      margin-top: 2.4rem;
     }
   }
 }

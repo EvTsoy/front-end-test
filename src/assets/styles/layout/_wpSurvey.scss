@@ -1,9 +1,6 @@
 .wp {
   display: flex;
   justify-content: center;
-  @media screen and (max-width: $breakpoint-1) {
-    padding: 0 3rem;
-  }
 
   &-split {
     width: 50%;
@@ -24,11 +21,16 @@
       right: 0;
       padding: 11rem 0;
       .wp-container {
-        width: 43.2rem;
+        max-width: 43.2rem;
         margin: auto;
         @media screen and (max-width: $breakpoint-1) {
-          min-width: 290px;
-          width: 100%;
+          width: 54%;
+          margin: auto;
+        }
+        @media screen and (max-width: $breakpoint-2) {
+          width: 72%;
+          min-width: 29rem;
+          margin: auto;
         }
       }
     }

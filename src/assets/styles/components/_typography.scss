@@ -6,7 +6,7 @@
 
 .wp__title {
   @include h3;
-  margin-top: 4.6rem;
+  margin-top: 4.8rem;
   text-align: center;
 }
 
@@ -18,5 +18,5 @@
 .destination-desc {
   @include p5($gray-3);
   text-align: center;
-  margin-top: 5.6rem;
+  margin-top: 4.8rem;
 }
